@@ -7,8 +7,9 @@ def matrix_dot_vector(a, b) -> torch.Tensor:
     Returns a 1-D tensor of length m, or tensor(-1) if dimensions mismatch.
     """
     # Your implementation here
-    if len(a[0]) != len(b):
+    try:
+        return torch.matmul(a,b)
+
+    except RuntimeError:
         return torch.tensor(-1)
 
-    else:
-        return torch.matmul(a,b)
