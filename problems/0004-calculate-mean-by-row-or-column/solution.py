@@ -10,6 +10,9 @@ def calculate_matrix_mean(matrix, mode: str) -> torch.Tensor:
     # Your implementation here
     if mode == "row":
         return torch.mean(a_t, dim=1)
+    
     if mode == "column":
         return torch.mean(a_t, dim=0)
 
+    else:
+        return torch.tensor([])
