@@ -8,8 +8,9 @@ def reshape_matrix(a, new_shape) -> torch.Tensor:
     if the number of elements does not match.
     """
     # Your implementation here
-    try: 
-        return torch.as_tensor(a).reshape(new_shape)
+    a_t = torch.as_tensor(a)
+    try:
+        return torch.reshape(a_t, new_shape)
 
     except RuntimeError:
         return torch.tensor([])
